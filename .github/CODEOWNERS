@@ -1,7 +1,7 @@
 * @ItsNeil17
 
 # Guides
-/content/docs/en/guides/* @ItsNeil17 @okunamayand @bencres
+/content/docs/en/guides/* @ItsNeil17 @okunamayanad @bencres
 
 # Community Projects
 /content/docs/en/projects/hylamity.mdx @Azathoth-Github
@@ -11,5 +11,5 @@
 
 # Website
 
-/src/app/\[lang\]/\(home\)/* @ItsNeil17 @okunamayand
-/src/app/components/* @okunamayand
+/src/app/\[lang\]/\(home\)/* @ItsNeil17 @okunamayanad
+/src/app/components/* @okunamayanad
