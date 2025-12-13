@@ -1,5 +1,5 @@
 {
-  "title": "Community Projects",
+  "title": "{meta.community_projects.title}",
   "icon": "PackageSearch",
   "index": true,
   "pages": ["...", "!example.mdx"]

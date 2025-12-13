@@ -5,19 +5,21 @@ import { source } from "@/lib/source";
 import { baseOptions } from "@/lib/layout.shared";
 import { DocsBanner } from "./docs-banner";
 import { ViewTransition } from "react";
+import { localizePageTree } from "@/lib/tree-localization";
 
 export default async function Layout({
   params,
   children,
 }: LayoutProps<"/[lang]/docs">) {
   const { lang } = await params;
+  const tree = localizePageTree(source.pageTree[lang], lang);
 
   return (
     <ViewTransition update="none">
       <div className="flex min-h-screen flex-col">
         <DocsBanner />
         <DocsLayout
-          tree={source.pageTree[lang]}
+          tree={tree}
           {...baseOptions(lang)}
           githubUrl="https://github.com/HytaleModding/site"
         >

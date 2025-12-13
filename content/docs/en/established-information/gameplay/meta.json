@@ -1,6 +1,5 @@
 {
-  "title": "Gameplay",
-  "description": "Anything related to the base gameplay of Hytale.",
+  "title": "{meta.established_information.gameplay.title}",
   "index": true,
   "icon": "Play"
 }

@@ -1,6 +1,5 @@
 {
-  "title": "Miscellaneous",
-  "description": "Anything that doesn't fall within the existing categories.",
+  "title": "{meta.established_information.misc.title}",
   "index": true,
   "icon": "Puzzle"
 }

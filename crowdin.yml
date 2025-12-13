@@ -6,8 +6,5 @@ files:
   - source: "content/docs/en/**/*.mdx"
     translation: "content/docs/%locale%/**/%original_file_name%"
 
-  - source: "content/docs/en/**/*.json"
-    translation: "content/docs/%locale%/**/%original_file_name%"
-
   - source: "messages/en.json"
     translation: "messages/%locale%.json"

@@ -1,9 +1,9 @@
 {
-  "title": "Established Information",
+  "title": "{meta.established_information.title}",
   "pages": [
     "faq.mdx",
     "developer-qa-insights.mdx",
-    "---Specific Categories---",
+    "---{meta.established_information.separator}---",
     "server",
     "client",
     "gameplay"

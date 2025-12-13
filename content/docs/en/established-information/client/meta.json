@@ -1,6 +1,5 @@
 {
-  "title": "Client",
-  "description": "Anything specific to the client of Hytale.",
+  "title": "{meta.established_information.client.title}",
   "index": true,
   "icon": "Monitor"
 }

@@ -1,4 +1,5 @@
 {
+  "title": "{meta.guides.title}",
   "pages": ["...", "java-basics"],
   "icon": "GraduationCap"
 }

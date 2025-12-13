@@ -1,5 +1,5 @@
 {
-  "title": "Server",
+  "title": "{meta.established_information.server.title}",
   "pages": ["server-first-dev.mdx", "..."],
   "icon": "Server"
 }

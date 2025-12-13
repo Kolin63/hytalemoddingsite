@@ -1,6 +1,5 @@
 {
-  "title": "Content Categories",
-  "description": "Different categories to develop mods for Hytale.",
+  "title": "{meta.established_information.server.content_categories.title}",
   "index": true,
   "icon": "Folder"
 }
