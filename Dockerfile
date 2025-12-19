@@ -26,10 +26,13 @@ RUN addgroup --system --gid 1001 nodejs && \
 
 WORKDIR /app
 
+RUN apk add --no-cache git
+
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+COPY --from=builder /content/docs/ ./content/docs/
 
 USER nextjs
 EXPOSE 8080
