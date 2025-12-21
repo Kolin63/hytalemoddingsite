@@ -16,6 +16,8 @@ import Melodium from "./(showcaseImages)/Melodium.gif";
 import GaleWivern from "./(showcaseImages)/gale_wivern.gif";
 import WulfrumArmor from "./(showcaseImages)/Wulfrum_Armor.gif";
 import ElectricMotor from "./(showcaseImages)/HyEnergy_Electric_Motor.gif";
+import HyFableLogo from "./(showcaseImages)/HyFableLogo.jpg";
+import HyFableBanner from "./(showcaseImages)/HyFableBanner.jpg";
 import { DiscordButton } from "./discord-button";
 import { GitInfoButton } from "@/components/git-info-button";
 
@@ -211,6 +213,15 @@ export default function HomePage() {
       link: "https://discord.gg/f2fMKYnRqR",
       type: 'art'
     },
+    {
+      title: "Hyfable Server Network",
+      author: "by Brad",
+      logo: HyFableLogo,
+      banner: HyFableBanner,
+      type: 'server',
+      description: "Hyfable is a Day 1 server preparing for Hytale release! Join us today!",
+      link: "https://hyfable.com"
+    }
   ];
 
   const shuffledItems = [...showcaseItems].sort(() => Math.random() - 0.5);
