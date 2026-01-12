@@ -35,7 +35,7 @@ import Froggy from "./(showcaseImages)/Froggy.gif";
 import { DiscordButton } from "./discord-button";
 import { SponsorButton } from "./support-button";
 import { GitInfoButton } from "@/components/git-info-button";
-import { useEffect, useState, ViewTransition } from "react";
+import { useEffect, useState, ViewTransition, useMemo } from "react";
 import { SlidingNumber } from "@/components/ui/sliding-number";
 import Confetti from "react-confetti";
 
@@ -53,6 +53,82 @@ interface ShowcaseItem {
   type: ProjectType;
   description?: string;
 }
+
+const showcaseItems: ShowcaseItem[] = [
+  {
+    title: "Hynergy: Electric Motor",
+    author: "by seyager",
+    image: ElectricMotor,
+    link: "https://x.com/SeyagerYT",
+    type: "art",
+  },
+  {
+    title: "[WIP] Hylamity: Wulfrum Prosthesis",
+    author: "by alder_",
+    image: WulfrumProsthesis,
+    link: "https://discord.gg/f2fMKYnRqR",
+    type: "art",
+  },
+  {
+    title: "[WIP] Soundscape: Melodium Chunk",
+    author: "by 44Hydras",
+    image: Melodium,
+    link: "https://discord.com/users/197065442479702016",
+    type: "art",
+  },
+  {
+    title: "Gale Wivern",
+    author: "by Nicolas | Tourne_Vis",
+    image: GaleWivern,
+    link: "https://x.com/TourneVis_MC",
+    type: "art",
+  },
+  {
+    title: "[WIP] Hylamity: Wulfrum Armor",
+    author: "by alder_",
+    image: WulfrumArmor,
+    link: "https://discord.gg/f2fMKYnRqR",
+    type: "art",
+  },
+  {
+    title: "[WIP] Hylamity: Wulfrum Triangle",
+    author: "by alder_",
+    image: WulfrumTriangle,
+    link: "https://discord.gg/f2fMKYnRqR",
+    type: "art",
+  },
+  {
+    title: "Saqvobase's Spellcasting: Magic Circle - Gust",
+    author: "by Saqvobase",
+    image: MagicCircleGust,
+    link: "",
+    type: "art",
+  },
+  {
+    title: "Shroomie",
+    author: "by Miyako Hikari",
+    image: Shroomie,
+    link: "",
+    type: "art",
+  },
+  {
+    title: "Froggy",
+    author: "by Unknown Knight",
+    image: Froggy,
+    link: "",
+    type: "art",
+  },
+  {
+    title: "Hylandia",
+    author: "by Kristian / Hylandia Studios",
+    logo: HylandiaLogo,
+    banner: HylandiaBanner,
+    link: "https://discord.gg/hylandia",
+    type: "server",
+    description:
+      "A progressive minigames server for Hytale where your progress actually matters.",
+  },
+];
 
 const ShowcaseCard = ({ item }: { item: ShowcaseItem }) => {
   const hasImage = item.image;
@@ -235,85 +311,10 @@ export default function HomePage() {
   const params = useParams();
   const messages = useMessages();
 
-  const showcaseItems: ShowcaseItem[] = [
-    // Art projects
-    {
-      title: "Hynergy: Electric Motor",
-      author: "by seyager",
-      image: ElectricMotor,
-      link: "https://x.com/SeyagerYT",
-      type: "art",
-    },
-    {
-      title: "[WIP] Hylamity: Wulfrum Prosthesis",
-      author: "by alder_",
-      image: WulfrumProsthesis,
-      link: "https://discord.gg/f2fMKYnRqR",
-      type: "art",
-    },
-    {
-      title: "[WIP] Soundscape: Melodium Chunk",
-      author: "by 44Hydras",
-      image: Melodium,
-      link: "https://discord.com/users/197065442479702016",
-      type: "art",
-    },
-    {
-      title: "Gale Wivern",
-      author: "by Nicolas | Tourne_Vis",
-      image: GaleWivern,
-      link: "https://x.com/TourneVis_MC",
-      type: "art",
-    },
-    {
-      title: "[WIP] Hylamity: Wulfrum Armor",
-      author: "by alder_",
-      image: WulfrumArmor,
-      link: "https://discord.gg/f2fMKYnRqR",
-      type: "art",
-    },
-    {
-      title: "[WIP] Hylamity: Wulfrum Triangle",
-      author: "by alder_",
-      image: WulfrumTriangle,
-      link: "https://discord.gg/f2fMKYnRqR",
-      type: "art",
-    },
-    {
-      title: "Saqvobase's Spellcasting: Magic Circle - Gust",
-      author: "by Saqvobase",
-      image: MagicCircleGust,
-      link: "",
-      type: "art",
-    },
-    {
-      title: "Shroomie",
-      author: "by Miyako Hikari",
-      image: Shroomie,
-      link: "",
-      type: "art",
-    },
-    {
-      title: "Froggy",
-      author: "by Unknown Knight",
-      image: Froggy,
-      link: "",
-      type: "art",
-    },
-    {
-      title: "Hylandia",
-      author: "by Kristian / Hylandia Studios",
-      logo: HylandiaLogo,
-      banner: HylandiaBanner,
-      link: "https://discord.gg/hylandia",
-      type: "server",
-      description:
-        "A progressive minigames server for Hytale where your progress actually matters.",
-    },
-  ];
-
-  const shuffledItems = [...showcaseItems].sort(() => Math.random() - 0.5);
-  const repeatedItems = [...shuffledItems, ...shuffledItems, ...shuffledItems];
+  const repeatedItems = useMemo(() => {
+    const shuffledItems = [...showcaseItems].sort(() => Math.random() - 0.5);
+    return [...shuffledItems, ...shuffledItems, ...shuffledItems];
+  }, []);
 
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
