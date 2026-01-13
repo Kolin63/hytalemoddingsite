@@ -1,0 +1,9 @@
+{
+    "title": "Server Plugins",
+    "pages": [
+        "setting-up-env.mdx",
+        "creating-commands.mdx",
+        "creating-events.mdx"
+    ],
+    "icon": "Terminal"
+}

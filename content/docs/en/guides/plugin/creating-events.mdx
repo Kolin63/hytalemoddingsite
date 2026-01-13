@@ -1,0 +1,35 @@
+---
+title: "Creating Events"
+description: "Learn how to create custom events for your Hytale mod."
+authors:
+    - name: "Neil Revin"
+      link: "https://itsneil.dev"
+---
+
+## Event Class
+
+```java
+
+public class ExampleEvent {
+
+    public static void onPlayerReady(PlayerReadyEvent event) {
+        Player player = event.getPlayer();
+        player.sendMessage(Message.raw("Welcome " + player.getDisplayName()));
+    }
+
+}
+```
+
+## Registering the Event
+
+You need to register all events you make in the Main plugin class, usually in the `setup` function.
+
+```java
+public class MyPlugin extends JavaPlugin {
+
+    @Override
+    public void setup() {
+        this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, ExampleEvent::onPlayerReady);
+    }
+}
+```
