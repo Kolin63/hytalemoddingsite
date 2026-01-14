@@ -35,7 +35,7 @@ public class MyPlugin extends JavaPlugin {
 
     @Override
     public void setup() {
-        getServer().getCommandManager().registerCommand(new ExampleCommand());
+        this.getCommandRegistry().registerCommand(new ExampleCommand());
     }
 }
 ```
